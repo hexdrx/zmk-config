@@ -29,27 +29,26 @@ LOG_MODULE_REGISTER(per_key_rgb, CONFIG_LOG_DEFAULT_LEVEL);
 #define FADE_MS           400
 #define TICK_MS           33
 
-/* Position -> local per-key LED index (6..27). -1 = no LED for this position.
+/* Position -> local per-key LED index (6..27). Both halves use this same
+ * table; on each half it's only consulted for positions whose event arrived
+ * from the LOCAL kscan, so left positions are used on central and right
+ * positions on peripheral.
  *
- * Both halves use this same table; on each half it's only consulted for
- * positions whose event arrived from the LOCAL kscan. So pos_to_led[5] (R,
- * left half) is used only on the central, and pos_to_led[8] (U, right half)
- * is used only on the peripheral.
- *
- * Initial guess: row-major within the per-key range; right half mirrors
- * left so position N and its mirror map to the same LOCAL LED index
- * (since the right PCB is a mirror of the left).
- *
- * Adjust the numbers below to match the real chain order on your PCB. */
+ * Chain order on the Jorne PCB (deduced from calibration: snake by columns
+ * starting from the inner thumb):
+ *   6:RET 7:B 8:G 9:T 10:R 11:F 12:V 13:SPC 14:TAB
+ *   15:C 16:D 17:E 18:W 19:S 20:X 21:Z 22:A 23:Q 24:` 25:- 26:= 27:LWIN
+ * The right half is mirrored, so each right position points at the same
+ * local LED index as its left-side mirror. */
 static const int8_t pos_to_led[] = {
     /* row 0, positions 0..13 (left LWIN ` Q W E R T | right Y U I O P [ ]/RWIN) */
-     6,  7,  8,  9, 10, 11, 12,    12, 11, 10,  9,  8,  7,  6,
+    27, 24, 23, 18, 17, 10,  9,     9, 10, 17, 18, 23, 24, 27,
     /* row 1, positions 14..25 (left - A S D F G | right H J K L ; ') */
-    13, 14, 15, 16, 17, 18,        18, 17, 16, 15, 14, 13,
+    25, 22, 19, 16, 11,  8,         8, 11, 16, 19, 22, 25,
     /* row 2, positions 26..37 (left = Z X C V B | right N M , . / \) */
-    19, 20, 21, 22, 23, 24,        24, 23, 22, 21, 20, 19,
+    26, 21, 20, 15, 12,  7,         7, 12, 15, 20, 21, 26,
     /* thumbs, positions 38..43 (left TAB SPC RET | right ESC BSPC DEL) */
-    25, 26, 27,                    27, 26, 25,
+    14, 13,  6,                     6, 13, 14,
 };
 
 static const struct device *const strip = DEVICE_DT_GET(STRIP_NODE);

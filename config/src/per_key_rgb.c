@@ -1,8 +1,13 @@
 /*
- * Per-key reactive RGB: white flash on key press, fading over ~400ms.
+ * Per-key reactive RGB: white flash on each key press, fading over ~400ms.
  * Owns the WS2812 LED strip exposed as chosen `zmk,underglow`.
- * Only fires on the central side (peripheral does not receive
- * zmk_position_state_changed in ZMK v0.3).
+ *
+ * On Jorne the chain is 28 LEDs per side: indices 0..5 are underglow
+ * (kept dark), indices 6..27 are per-key (1 per switch).
+ *
+ * Each half is independent — we only react to position events whose source
+ * is the LOCAL kscan, so the central does not double-flash for keys
+ * physically pressed on the peripheral (and vice versa).
  */
 
 #include <string.h>
@@ -18,23 +23,33 @@
 
 LOG_MODULE_REGISTER(per_key_rgb, CONFIG_LOG_DEFAULT_LEVEL);
 
-#define STRIP_NODE   DT_CHOSEN(zmk_underglow)
-#define STRIP_LEN    DT_PROP(STRIP_NODE, chain_length)
-#define FADE_MS      400
-#define TICK_MS      33
+#define STRIP_NODE        DT_CHOSEN(zmk_underglow)
+#define STRIP_LEN         DT_PROP(STRIP_NODE, chain_length)
+#define UNDERGLOW_COUNT   6
+#define FADE_MS           400
+#define TICK_MS           33
 
-/* Position -> local LED index on the LEFT (central) half. -1 = not on this side.
- * Initial guess assumes a row-major chain; calibrate by pressing keys
- * one-by-one and observing which LED lights, then reorder this array. */
+/* Position -> local per-key LED index (6..27). -1 = no LED for this position.
+ *
+ * Both halves use this same table; on each half it's only consulted for
+ * positions whose event arrived from the LOCAL kscan. So pos_to_led[5] (R,
+ * left half) is used only on the central, and pos_to_led[8] (U, right half)
+ * is used only on the peripheral.
+ *
+ * Initial guess: row-major within the per-key range; right half mirrors
+ * left so position N and its mirror map to the same LOCAL LED index
+ * (since the right PCB is a mirror of the left).
+ *
+ * Adjust the numbers below to match the real chain order on your PCB. */
 static const int8_t pos_to_led[] = {
-    /* row 0 (positions 0..13): 7 left then 7 right */
-     0,  1,  2,  3,  4,  5,  6, -1, -1, -1, -1, -1, -1, -1,
-    /* row 1 (positions 14..25): 6 left then 6 right */
-     7,  8,  9, 10, 11, 12, -1, -1, -1, -1, -1, -1,
-    /* row 2 (positions 26..37): 6 left then 6 right */
-    13, 14, 15, 16, 17, 18, -1, -1, -1, -1, -1, -1,
-    /* thumbs (positions 38..43): 3 left then 3 right */
-    19, 20, 21, -1, -1, -1,
+    /* row 0, positions 0..13 (left LWIN ` Q W E R T | right Y U I O P [ ]/RWIN) */
+     6,  7,  8,  9, 10, 11, 12,    12, 11, 10,  9,  8,  7,  6,
+    /* row 1, positions 14..25 (left - A S D F G | right H J K L ; ') */
+    13, 14, 15, 16, 17, 18,        18, 17, 16, 15, 14, 13,
+    /* row 2, positions 26..37 (left = Z X C V B | right N M , . / \) */
+    19, 20, 21, 22, 23, 24,        24, 23, 22, 21, 20, 19,
+    /* thumbs, positions 38..43 (left TAB SPC RET | right ESC BSPC DEL) */
+    25, 26, 27,                    27, 26, 25,
 };
 
 static const struct device *const strip = DEVICE_DT_GET(STRIP_NODE);
@@ -46,7 +61,12 @@ static void render_tick(struct k_work *work) {
     int64_t now = k_uptime_get();
     bool any_active = false;
 
-    for (size_t i = 0; i < STRIP_LEN; i++) {
+    /* Underglow LEDs always dark. */
+    for (size_t i = 0; i < UNDERGLOW_COUNT && i < STRIP_LEN; i++) {
+        pixels[i].r = pixels[i].g = pixels[i].b = 0;
+    }
+
+    for (size_t i = UNDERGLOW_COUNT; i < STRIP_LEN; i++) {
         uint8_t v = 0;
         int64_t t0 = press_time_ms[i];
         if (t0 > 0) {
@@ -75,11 +95,16 @@ static int on_position_state_changed(const zmk_event_t *eh) {
     if (ev == NULL || !ev->state) {
         return ZMK_EV_EVENT_BUBBLE;
     }
+    /* Only react to keys physically pressed on THIS half. Events relayed
+     * from the other half over the split BLE link have a non-LOCAL source. */
+    if (ev->source != ZMK_POSITION_STATE_CHANGE_SOURCE_LOCAL) {
+        return ZMK_EV_EVENT_BUBBLE;
+    }
     if (ev->position >= ARRAY_SIZE(pos_to_led)) {
         return ZMK_EV_EVENT_BUBBLE;
     }
     int8_t idx = pos_to_led[ev->position];
-    if (idx < 0) {
+    if (idx < 0 || idx >= STRIP_LEN) {
         return ZMK_EV_EVENT_BUBBLE;
     }
     press_time_ms[idx] = k_uptime_get();

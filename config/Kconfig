@@ -1,6 +1,8 @@
 config PER_KEY_REACTIVE_RGB
     bool "Per-key reactive RGB flash on key press"
-    depends on WS2812_STRIP
+    select LED_STRIP
+    select WS2812_STRIP
+    select SPI
     default n
     help
       White flash on each key press, fading out over ~400ms.

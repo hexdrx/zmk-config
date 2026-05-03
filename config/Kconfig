@@ -1,0 +1,8 @@
+config PER_KEY_REACTIVE_RGB
+    bool "Per-key reactive RGB flash on key press"
+    depends on WS2812_STRIP
+    default n
+    help
+      White flash on each key press, fading out over ~400ms.
+      Takes full ownership of the LED strip — make sure
+      ZMK_RGB_UNDERGLOW is disabled.

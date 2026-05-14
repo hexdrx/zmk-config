@@ -1,4 +1,4 @@
-<svg width="1040" height="1400" viewBox="0 0 1040 1400" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1700" height="1400" viewBox="0 0 1700 1400" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style>/* inherit to force styles through use tags */
 svg path {
     fill: inherit;
@@ -322,7 +322,7 @@ path.combo {
 </a></g>
 <g class="combo combopos-0">
 <rect rx="6" ry="6" x="686" y="74" width="28" height="26" class="combo"/>
-<text x="700" y="88" class="combo tap">ESC</text>
+<text x="700" y="88" class="combo tap">LMB</text>
 </g>
 </g>
 </g>
@@ -506,7 +506,7 @@ path.combo {
 </g>
 <g class="combo combopos-0">
 <rect rx="6" ry="6" x="686" y="74" width="28" height="26" class="combo"/>
-<text x="700" y="88" class="combo tap">ESC</text>
+<text x="700" y="88" class="combo tap">MMB</text>
 </g>
 </g>
 </g>
@@ -560,13 +560,13 @@ path.combo {
 <g transform="translate(672, 35)" class="key keypos-8">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">PG</tspan><tspan x="0" dy="1.2em">UP</tspan>
+<tspan x="0" dy="-0.6em">SCRL</tspan><tspan x="0" dy="1.2em">↑</tspan>
 </text>
 </g>
 <g transform="translate(728, 28)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">PG</tspan><tspan x="0" dy="1.2em">DN</tspan>
+<tspan x="0" dy="-0.6em">SCRL</tspan><tspan x="0" dy="1.2em">↓</tspan>
 </text>
 </g>
 <g transform="translate(784, 35)" class="key keypos-10">
@@ -731,7 +731,7 @@ path.combo {
 </g>
 <g class="combo combopos-0">
 <rect rx="6" ry="6" x="686" y="74" width="28" height="26" class="combo"/>
-<text x="700" y="88" class="combo tap">ESC</text>
+<text x="700" y="88" class="combo tap">RMB</text>
 </g>
 </g>
 </g>
@@ -942,8 +942,95 @@ path.combo {
 </g>
 <g class="combo combopos-0">
 <rect rx="6" ry="6" x="686" y="74" width="28" height="26" class="combo"/>
-<text x="700" y="88" class="combo tap">ESC</text>
+<text x="700" y="88" class="combo tap"></text>
 </g>
 </g>
+</g>
+<g transform="translate(1060, 0)" class="cheatsheet">
+<text x="0" y="24" class="label" style="font-size:18px">Hotkeys cheatsheet</text>
+
+<text x="0" y="60" class="label" style="font-size:13px">macOS · Spaces &amp; Mission Control</text>
+<g transform="translate(0,88)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ ←</text><text x="100" y="29" class="combo" style="font-size:10px">Space влево</text></g>
+<g transform="translate(210,88)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ →</text><text x="100" y="29" class="combo" style="font-size:10px">Space вправо</text></g>
+<g transform="translate(420,88)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ ↑</text><text x="100" y="29" class="combo" style="font-size:10px">Mission Control</text></g>
+<g transform="translate(0,130)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ ↓</text><text x="100" y="29" class="combo" style="font-size:10px">App Exposé</text></g>
+<g transform="translate(210,130)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">F11</text><text x="100" y="29" class="combo" style="font-size:10px">Show Desktop</text></g>
+<g transform="translate(420,130)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">F4</text><text x="100" y="29" class="combo" style="font-size:10px">Launchpad</text></g>
+
+<text x="0" y="176" class="label" style="font-size:13px">macOS · Switching apps &amp; windows</text>
+<g transform="translate(0,204)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇥</text><text x="100" y="29" class="combo" style="font-size:10px">App Switcher →</text></g>
+<g transform="translate(210,204)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇧ ⇥</text><text x="100" y="29" class="combo" style="font-size:10px">App Switcher ←</text></g>
+<g transform="translate(420,204)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ `</text><text x="100" y="29" class="combo" style="font-size:10px">Окна приложения</text></g>
+<g transform="translate(0,246)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ M</text><text x="100" y="29" class="combo" style="font-size:10px">Свернуть окно</text></g>
+<g transform="translate(210,246)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ H</text><text x="100" y="29" class="combo" style="font-size:10px">Скрыть приложение</text></g>
+<g transform="translate(420,246)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⌥ H</text><text x="100" y="29" class="combo" style="font-size:10px">Скрыть остальные</text></g>
+<g transform="translate(0,288)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ W</text><text x="100" y="29" class="combo" style="font-size:10px">Закрыть окно</text></g>
+<g transform="translate(210,288)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ Q</text><text x="100" y="29" class="combo" style="font-size:10px">Quit приложение</text></g>
+<g transform="translate(420,288)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⌥ ⎋</text><text x="100" y="29" class="combo" style="font-size:10px">Force Quit диалог</text></g>
+
+<text x="0" y="334" class="label" style="font-size:13px">macOS · Window tiling (Sequoia+)</text>
+<g transform="translate(0,362)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">Fn ⌃ ←</text><text x="100" y="29" class="combo" style="font-size:10px">Половина слева</text></g>
+<g transform="translate(210,362)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">Fn ⌃ →</text><text x="100" y="29" class="combo" style="font-size:10px">Половина справа</text></g>
+<g transform="translate(420,362)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">Fn ⌃ ↑</text><text x="100" y="29" class="combo" style="font-size:10px">Половина сверху</text></g>
+<g transform="translate(0,404)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">Fn ⌃ ↓</text><text x="100" y="29" class="combo" style="font-size:10px">Половина снизу</text></g>
+<g transform="translate(210,404)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">Fn ⌃ ⇧ ←</text><text x="100" y="29" class="combo" style="font-size:10px">Угловая четверть</text></g>
+<g transform="translate(420,404)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ ⌘ F</text><text x="100" y="29" class="combo" style="font-size:10px">Fullscreen toggle</text></g>
+<g transform="translate(0,446)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">Window ▸ Fill</text><text x="100" y="29" class="combo" style="font-size:10px">Center / Maximize</text></g>
+
+<text x="0" y="492" class="label" style="font-size:13px">macOS · Spotlight &amp; Screenshots</text>
+<g transform="translate(0,520)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ Space</text><text x="100" y="29" class="combo" style="font-size:10px">Spotlight</text></g>
+<g transform="translate(210,520)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ ⌘ Space</text><text x="100" y="29" class="combo" style="font-size:10px">Emoji / символы</text></g>
+<g transform="translate(420,520)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇧ 3</text><text x="100" y="29" class="combo" style="font-size:10px">Скриншот → файл</text></g>
+<g transform="translate(0,562)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇧ 4</text><text x="100" y="29" class="combo" style="font-size:10px">Область → файл</text></g>
+<g transform="translate(210,562)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇧ 5</text><text x="100" y="29" class="combo" style="font-size:10px">Меню скриншота</text></g>
+<g transform="translate(420,562)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">+ ⌃</text><text x="100" y="29" class="combo" style="font-size:10px">Скриншот → буфер</text></g>
+
+<text x="0" y="608" class="label" style="font-size:13px">macOS · System &amp; Lock</text>
+<g transform="translate(0,636)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ ⌘ Q</text><text x="100" y="29" class="combo" style="font-size:10px">Lock screen</text></g>
+<g transform="translate(210,636)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ ⇧ ⏏ / ⏻</text><text x="100" y="29" class="combo" style="font-size:10px">Sleep дисплея</text></g>
+<g transform="translate(420,636)"><rect rx="5" ry="5" width="200" height="38" class="key ghost"/><text x="100" y="14" class="combo" style="font-weight:600">в System Settings</text><text x="100" y="29" class="combo" style="font-size:10px">Notification Center</text></g>
+<g transform="translate(0,678)"><rect rx="5" ry="5" width="200" height="38" class="key ghost"/><text x="100" y="14" class="combo" style="font-weight:600">в System Settings</text><text x="100" y="29" class="combo" style="font-size:10px">Focus / Do Not Disturb</text></g>
+
+<text x="0" y="724" class="label" style="font-size:13px">macOS · Text navigation</text>
+<g transform="translate(0,752)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ←</text><text x="100" y="29" class="combo" style="font-size:10px">В начало строки</text></g>
+<g transform="translate(210,752)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ →</text><text x="100" y="29" class="combo" style="font-size:10px">В конец строки</text></g>
+<g transform="translate(420,752)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ↑</text><text x="100" y="29" class="combo" style="font-size:10px">В начало документа</text></g>
+<g transform="translate(0,794)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ↓</text><text x="100" y="29" class="combo" style="font-size:10px">В конец документа</text></g>
+<g transform="translate(210,794)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌥ ←</text><text x="100" y="29" class="combo" style="font-size:10px">Слово влево</text></g>
+<g transform="translate(420,794)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌥ →</text><text x="100" y="29" class="combo" style="font-size:10px">Слово вправо</text></g>
+<g transform="translate(0,836)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌥ ⌫</text><text x="100" y="29" class="combo" style="font-size:10px">Удалить слово</text></g>
+<g transform="translate(210,836)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⌫</text><text x="100" y="29" class="combo" style="font-size:10px">Удалить до начала строки</text></g>
+
+<text x="0" y="882" class="label" style="font-size:13px">VS Code · Navigation</text>
+<g transform="translate(0,910)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ P</text><text x="100" y="29" class="combo" style="font-size:10px">Quick Open file</text></g>
+<g transform="translate(210,910)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇧ P</text><text x="100" y="29" class="combo" style="font-size:10px">Command Palette</text></g>
+<g transform="translate(420,910)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ B</text><text x="100" y="29" class="combo" style="font-size:10px">Toggle sidebar</text></g>
+<g transform="translate(0,952)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ J</text><text x="100" y="29" class="combo" style="font-size:10px">Toggle bottom panel</text></g>
+<g transform="translate(210,952)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ `</text><text x="100" y="29" class="combo" style="font-size:10px">Toggle terminal</text></g>
+<g transform="translate(420,952)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ ⇥</text><text x="100" y="29" class="combo" style="font-size:10px">Switch editors</text></g>
+<g transform="translate(0,994)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ \</text><text x="100" y="29" class="combo" style="font-size:10px">Split editor</text></g>
+<g transform="translate(210,994)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌃ G</text><text x="100" y="29" class="combo" style="font-size:10px">Go to line</text></g>
+
+<text x="0" y="1040" class="label" style="font-size:13px">VS Code · Editing</text>
+<g transform="translate(0,1068)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ /</text><text x="100" y="29" class="combo" style="font-size:10px">Toggle line comment</text></g>
+<g transform="translate(210,1068)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⌥ A</text><text x="100" y="29" class="combo" style="font-size:10px">Block comment</text></g>
+<g transform="translate(420,1068)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇧ K</text><text x="100" y="29" class="combo" style="font-size:10px">Delete line</text></g>
+<g transform="translate(0,1110)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌥ ↑ / ↓</text><text x="100" y="29" class="combo" style="font-size:10px">Move line up / down</text></g>
+<g transform="translate(210,1110)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⇧ ⌥ ↑ / ↓</text><text x="100" y="29" class="combo" style="font-size:10px">Duplicate line</text></g>
+<g transform="translate(420,1110)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ D</text><text x="100" y="29" class="combo" style="font-size:10px">Add next match</text></g>
+<g transform="translate(0,1152)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇧ L</text><text x="100" y="29" class="combo" style="font-size:10px">Select all matches</text></g>
+<g transform="translate(210,1152)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇧ \</text><text x="100" y="29" class="combo" style="font-size:10px">Match bracket</text></g>
+<g transform="translate(420,1152)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ = / −</text><text x="100" y="29" class="combo" style="font-size:10px">Zoom in / out</text></g>
+<g transform="translate(0,1194)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ K  Z</text><text x="100" y="29" class="combo" style="font-size:10px">Zen Mode</text></g>
+
+<text x="0" y="1240" class="label" style="font-size:13px">VS Code · Refactor &amp; Debug</text>
+<g transform="translate(0,1268)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">F12</text><text x="100" y="29" class="combo" style="font-size:10px">Go to definition</text></g>
+<g transform="translate(210,1268)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌥ F12</text><text x="100" y="29" class="combo" style="font-size:10px">Peek definition</text></g>
+<g transform="translate(420,1268)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⇧ F12</text><text x="100" y="29" class="combo" style="font-size:10px">Find references</text></g>
+<g transform="translate(0,1310)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">F2</text><text x="100" y="29" class="combo" style="font-size:10px">Rename symbol</text></g>
+<g transform="translate(210,1310)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ .</text><text x="100" y="29" class="combo" style="font-size:10px">Quick Fix</text></g>
+<g transform="translate(420,1310)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">⌘ ⇧ O</text><text x="100" y="29" class="combo" style="font-size:10px">Symbol in file</text></g>
+<g transform="translate(0,1352)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">F5</text><text x="100" y="29" class="combo" style="font-size:10px">Start / Continue debug</text></g>
+<g transform="translate(210,1352)"><rect rx="5" ry="5" width="200" height="38" class="key"/><text x="100" y="14" class="combo" style="font-weight:600">F9</text><text x="100" y="29" class="combo" style="font-size:10px">Toggle breakpoint</text></g>
 </g>
 </svg>

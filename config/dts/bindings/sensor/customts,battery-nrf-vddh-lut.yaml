@@ -1,0 +1,5 @@
+description: |
+  Battery SoC monitoring using the nRF VDDH ADC channel, with a LiPo
+  discharge-curve lookup table instead of the linear ZMK approximation.
+
+compatible: "customts,battery-nrf-vddh-lut"

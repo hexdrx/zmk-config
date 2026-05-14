@@ -3,3 +3,8 @@ if(CONFIG_PER_KEY_REACTIVE_RGB)
   zephyr_library_sources(src/per_key_rgb.c)
   zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
 endif()
+
+if(CONFIG_BATTERY_NRF_VDDH_LUT)
+  zephyr_library_named(battery_nrf_vddh_lut)
+  zephyr_library_sources(src/battery_nrf_vddh_lut.c)
+endif()

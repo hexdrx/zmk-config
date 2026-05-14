@@ -1,0 +1,8 @@
+/*
+ * Replace the stock zmk,battery-nrf-vddh driver on the nice_nano_v2 board
+ * with our custom LUT-based driver. Applies to both halves.
+ */
+
+&vbatt {
+    compatible = "customts,battery-nrf-vddh-lut";
+};

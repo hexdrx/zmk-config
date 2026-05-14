@@ -8,3 +8,15 @@ config PER_KEY_REACTIVE_RGB
       White flash on each key press, fading out over ~400ms.
       Takes full ownership of the LED strip — make sure
       ZMK_RGB_UNDERGLOW is disabled.
+
+DT_COMPAT_CUSTOMTS_BATTERY_NRF_VDDH_LUT := customts,battery-nrf-vddh-lut
+
+config BATTERY_NRF_VDDH_LUT
+    bool "LUT-based LiPo state-of-charge driver for nRF VDDH"
+    default $(dt_compat_enabled,$(DT_COMPAT_CUSTOMTS_BATTERY_NRF_VDDH_LUT))
+    select ADC
+    select SENSOR
+    help
+      Replaces ZMK's linear lithium-ion approximation with a LiPo
+      discharge-curve lookup table. Auto-enabled when a devicetree node
+      with compatible "customts,battery-nrf-vddh-lut" is present.
